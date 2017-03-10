@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('pengguna/{pengguna}', function ($pengguna) {
+    return "Hello World dari pengguna $pengguna";
 });
-route::get('public', function(){
-	return view('Biodata');
-});
+	
