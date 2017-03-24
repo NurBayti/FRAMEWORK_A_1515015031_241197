@@ -10,19 +10,33 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/',function(){
+	return view('master');
+});
 
 
 Route::get('pengguna','PenggunaController@awal');
 Route::get('pengguna/tambah','PenggunaController@tambah');
-Route::get('pengguna/simpan','PenggunaController@simpan');
+Route::post('pengguna/simpan','PenggunaController@simpan');
+Route::get('pengguna/edit/{pengguna}','PenggunaController@edit');
+Route::post('pengguna/edit/{pengguna}','PenggunaController@update');
+Route::get('pengguna/lihat/{pengguna}','PenggunaController@lihat');
+Route::get('pengguna/hapus/{pengguna}','PenggunaController@hapus');
 
 Route::get('ruangan','RuanganController@awal');
 Route::get('ruangan/tambah','RuanganController@tambah');
-Route::get('ruangan/simpan','RuanganController@simpan');
+Route::post('ruangan/simpan','RuanganController@simpan');
+Route::get('ruangan/edit/{ruangan}','RuanganController@edit');
+Route::post('ruangan/edit/{ruangan}','RuanganController@update');
+Route::get('ruangan/lihat/{ruangan}','RuanganController@lihat');
+Route::get('ruangan/hapus/{ruangan}','RuanganController@hapus');
 
 Route::get('matakuliah','MatakuliahController@awal');
 Route::get('matakuliah/tambah','MatakuliahController@tambah');
-Route::get('matakuliah/simpan','MatakuliahController@simpan');
+Route::post('matakuliah/simpan','MatakuliahController@simpan');
+Route::get('matakuliah/edit/{matakuliah}','MatakuliahController@edit');
+Route::post('matakuliah/edit/{matakuliah}','MatakuliahController@update');
+Route::get('matakuliah/hapus/{matakuliah}','MatakuliahController@hapus');
 
 Route::get('dosen','DosenController@awal');
 Route::get('dosen/tambah','DosenController@tambah');
@@ -43,6 +57,5 @@ Route::get('jadwal_matakuliah/simpan','Jadwal_MatakuliahController@simpan');
 
 
 //Route::get('pengguna/{pengguna}', function ($pengguna) {
-   // return "Hello World dari pengguna $pengguna";
+//return "Hello World dari pengguna $pengguna";
 //});
-
